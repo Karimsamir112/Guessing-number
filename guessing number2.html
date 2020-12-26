@@ -1,0 +1,279 @@
+<html lang="en">
+
+
+
+<head>
+	
+	
+	<title>Number guessing </title>
+	
+	<style>
+	
+	
+		h1{
+			text-align: center;
+			color: aliceblue;
+			background-color: blueviolet;
+		}
+		#lose{
+			text-align: center;
+			color: aliceblue;
+			background-color: blueviolet;
+		}
+		#win{
+			text-align: center;
+			color: green;
+			background-color:aquamarine;
+		}
+	
+		p {
+			text-align: center;
+		}
+	
+		h2{
+			text-align: center;
+			font-size: 60px;
+			color:white;
+		}
+	
+		div{
+			
+			background-color: cornflowerblue;
+			height: 550px;
+			width: 700px;
+			margin-left: 28%;
+		}
+		
+		input{
+			margin-left: 40px;
+			font-size:50px;
+			height: 100px;
+			width:600px;
+		}
+		
+		button{
+			background-color: yellow;
+			border-radius: 30px;
+			font-size: 30px;
+			margin-left: 240px;
+		}
+		.again{
+			background-color: darkred;
+			border-radius: 30px;
+			font-size: 30px;
+			margin-left: 250px;
+			
+		}
+
+		h4{
+			color:white;
+			margin-left: 255px;
+			font-size:20px;
+		}
+		
+	</style>
+	
+
+	</head>
+
+<body>
+	
+	
+	<h1>Number guessing game</h1>
+	
+	<p>
+	 Try and guess a random number between 1 and 100. <br> <br>
+		
+		you have 10 attemps to guess the right number.
+	
+	
+	</p>
+	
+	
+	
+	
+	<div>
+	
+	
+	
+	<h2> Guess a Number</h2>
+	
+	
+	
+	<input id="inp" type="number">
+	 <br>
+		<br>
+		
+		 <br>
+		<br>
+		
+		 
+		
+		
+		<button onclick="numb();"  id="check"> submit guess</button>
+
+		<button style="display:none;" class="again"> Play Again</button>
+	
+	<br>
+		
+		 
+		
+		<h4 id="prev">Previous Guesses :</h4>
+	
+	
+	<h4 id="remaining">Guesses Remaining :10</h4>
+	
+	<br>
+	
+	<h1 id="lose" style="display:none;">Too low! Try Again</h1>
+		
+		<h1 id="win" style="display:none;">Congratulation ..... you win </h1>
+	
+	
+	
+	</div>
+	
+
+	<script>
+		
+	/*	var sub = document.querySelector('.check');
+		
+		var i;
+		
+		for (i = 0 ; i < sub.length ; i++){
+			
+			sub[i].addEventListener("click" , numb);
+		} */
+		
+		var score = [9];
+		
+		
+	
+		
+		document.querySelector(".again").addEventListener("click" , playag);
+		
+		function playag() {
+			
+			window.location.href="number guessing2.html";
+		}
+														 
+													
+														 
+														 
+	
+		// the right number is 32
+		
+	
+		
+		
+		
+		function numb() {
+			
+							window.remaining.innerHTML="Guesses Remaining :" + score[9];
+
+			
+			var val = window.inp.value;
+			
+			if(window.inp.value==32){
+				
+								
+window.prev.innerHTML="Previous Guesses :32";
+				
+				window.check.style.display="none";
+				
+				window.lose.style.display="none";
+				window.win.style.display="block";
+				document.querySelector(".again").style.display="block";
+				
+				window.remaining.innerHTML="Guesses Remaining :" + score[0];
+			}
+			
+			
+			else if(score[0]==0){
+				
+				window.remaining.innerHTML="Guesses Remaining :0";
+				
+				window.lose.style.display="block";
+				
+				window.win.style.display="none";
+				
+				window.prev.innerHTML="Previous Guesses :" + val;
+				
+				document.querySelector(".again").style.display="block";
+				
+				window.check.style.display="none";
+				window.inp.value=""; 
+				
+			}
+			
+			
+			
+			else {
+				
+				window.remaining.innerHTML="Guesses Remaining :" + score[0]--;
+				
+				window.prev.innerHTML="Previous Guesses :" + val ;
+				window.inp.value="";
+				window.lose.style.display="block";
+				
+			}
+			
+			
+			
+			
+			
+		
+
+			
+		}
+	
+	
+	
+	</script>
+	
+
+	</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
