@@ -1,0 +1,494 @@
+<html>
+
+
+
+<head>
+	
+	
+	<title>Number guessing </title>
+	
+	<style>
+	
+	
+		h1{
+			text-align: center;
+			color: aliceblue;
+			background-color: blueviolet;
+		}
+		#lose{
+			text-align: center;
+			color: aliceblue;
+			background-color: blueviolet;
+		}
+		#win{
+			text-align: center;
+			color: green;
+			background-color:aquamarine;
+		}
+	
+		p {
+			text-align: center;
+		}
+	
+		h2{
+			text-align: center;
+			font-size: 60px;
+			color:white;
+		}
+	
+		div{
+			
+			background-color: cornflowerblue;
+			height: 550px;
+			width: 90%;
+			margin:50px auto;
+			text-align: center;
+		}
+		
+		input{
+			margin-left: 0px;
+			font-size:50px;
+			height: 100px;
+			width:80%;
+		}
+		
+		button{
+			background-color: yellow;
+			border-radius: 30px;
+			font-size: 30px;
+			margin-left: 0px;
+		}
+		.again{
+			background-color: darkred;
+			border-radius: 30px;
+			font-size: 30px;
+			margin-left: 0px;
+			
+		}
+
+		h4{
+			color:white;
+			margin-left:0px;
+			font-size:20px;
+		}
+		
+	</style>
+	
+	
+	
+	
+	
+	
+	
+	
+	</head>
+
+<body>
+	
+	
+	<h1>Number guessing game</h1>
+	
+	<p>
+	 Try and guess a random number between 1 and 100. <br> <br>
+		
+		you have 10 attemps to guess the right number.
+	
+	
+	</p>
+	
+	
+	
+	
+	<div>
+	
+	
+	
+	<h2> Guess a Number</h2>
+	
+	
+	
+	<input id="inp" type="number">
+	 <br>
+		<br>
+		
+		 <br>
+		<br>
+		
+		 
+		
+		
+		<button id="check"> submit guess</button>
+		<button onclick="numb(this.id , 'check3');" style="display:none;" id="check2"> submit guess</button>
+		<button onclick="numb(this.id , 'check4');" style="display:none;" id="check3"> submit guess</button>
+		<button onclick="numb(this.id , 'check5');" style="display:none;" id="check4"> submit guess</button>
+		<button onclick="numb(this.id , 'check6');" style="display:none;" id="check5"> submit guess</button>
+		<button onclick="numb(this.id , 'check7');" style="display:none;" id="check6"> submit guess</button>
+		<button onclick="numb(this.id , 'check8');" style="display:none;" id="check7"> submit guess</button>
+		<button onclick="numb(this.id , 'check9');" style="display:none;" id="check8"> submit guess</button>
+		<button onclick="numb(this.id , 'check10');" style="display:none;" id="check9"> submit guess</button>
+		<button onclick="numb(this.id);" style="display:none;" id="check10"> submit guess</button>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<button style="display:none;" class="again"> Play Again</button>
+	
+	<br>
+		
+		 
+		
+		<h4 id="prev">Previous Guesses :</h4>
+	
+	
+	<h4 id="remaining">Guesses Remaining :10</h4>
+	
+	<br>
+	
+	<h1 id="lose" style="display:none;">Too low! Try Again</h1>
+		
+		<h1 id="win" style="display:none;">Congratulation ..... you win </h1>
+	
+	
+	
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<script>
+		
+		var g =10;
+		
+		document.querySelector(".again").addEventListener("click" , playag);
+		
+		function playag() {
+			
+			window.location.href="number guessing.html";
+		}
+														 
+														
+														 
+														 
+	
+		// the right number is 32
+		
+		document.getElementById("check").addEventListener("click" , numb);
+		
+		
+		function numb(id , id2) {
+			
+			var val = window.inp.value;
+			
+			if(window.inp.value==32){
+				
+								
+window.prev.innerHTML="Previous Guesses :32";
+				
+				window.check.style.display="none";
+				
+				window.lose.style.display="none";
+				window.win.style.display="block";
+				document.querySelector(".again").style.display="block";
+			}
+			
+			else if(window.remaining.innerHTML=="Guesses Remaining :10" ) {
+				
+				
+			
+				
+				
+				window.remaining.innerHTML="Guesses Remaining :9";
+				
+				window.prev.innerHTML="Previous Guesses :" + val ;
+				window.inp.value="";
+				window.lose.style.display="block";
+				
+				document.getElementById(id).style.display="none";
+				document.getElementById(id2).style.display="block";
+				
+				
+				
+			}
+			
+			
+			
+			else if(window.remaining.innerHTML=="Guesses Remaining :9"){
+				
+				window.remaining.innerHTML="Guesses Remaining :8";
+				
+				window.prev.innerHTML="Previous Guesses :" + val;
+				window.inp.value="";
+				window.lose.style.display="block";
+				
+				document.getElementById(id).style.display="none";
+				document.getElementById(id2).style.display="block";
+				
+				
+				
+			}
+			
+			
+			
+			
+			
+			else if(window.remaining.innerHTML=="Guesses Remaining :8"){
+				
+				window.remaining.innerHTML="Guesses Remaining :7";
+				
+				window.prev.innerHTML="Previous Guesses :" + val;
+				
+				window.inp.value="";
+				
+				window.lose.style.display="block";
+				
+				document.getElementById(id).style.display="none";
+				document.getElementById(id2).style.display="block";
+				
+				
+			}
+			
+			
+			
+			
+			
+			else if(window.remaining.innerHTML=="Guesses Remaining :7"){
+				
+				window.remaining.innerHTML="Guesses Remaining :6";
+				
+				window.prev.innerHTML="Previous Guesses :" + val;
+				
+				window.inp.value="";
+				window.lose.style.display="block";
+				
+				document.getElementById(id).style.display="none";
+				document.getElementById(id2).style.display="block";
+				
+				
+			}
+			
+			
+			
+			
+			
+			
+			else if(window.remaining.innerHTML=="Guesses Remaining :6"){
+				
+				window.remaining.innerHTML="Guesses Remaining :5";
+				
+				window.prev.innerHTML="Previous Guesses :" + val;
+				
+				window.inp.value="";
+				window.lose.style.display="block";
+				
+				
+				document.getElementById(id).style.display="none";
+				document.getElementById(id2).style.display="block";
+				
+				
+			}
+			
+			
+			
+			else if(window.remaining.innerHTML=="Guesses Remaining :5"){
+				
+				window.remaining.innerHTML="Guesses Remaining :4";
+				
+				window.prev.innerHTML="Previous Guesses :" + val;
+				
+				window.inp.value="";
+				
+				window.lose.style.display="block";
+				
+				document.getElementById(id).style.display="none";
+				document.getElementById(id2).style.display="block";
+				
+				
+			}
+			
+			
+			
+			
+			
+			else if(window.remaining.innerHTML=="Guesses Remaining :4"){
+				
+				window.remaining.innerHTML="Guesses Remaining :3";
+				
+				window.prev.innerHTML="Previous Guesses :" + val;
+				
+				window.inp.value="";
+				
+				window.lose.style.display="block";
+				
+				document.getElementById(id).style.display="none";
+				document.getElementById(id2).style.display="block";
+				
+				
+				
+			}
+			
+			
+			
+			else if(window.remaining.innerHTML=="Guesses Remaining :3"){
+				
+				window.remaining.innerHTML="Guesses Remaining :2";
+				
+				window.prev.innerHTML="Previous Guesses :" + val;
+				
+				window.inp.value="";
+				
+				window.lose.style.display="block";
+				
+				document.getElementById(id).style.display="none";
+				document.getElementById(id2).style.display="block";
+				
+				
+				
+			}
+			
+			
+			
+			
+			
+			
+			else if(window.remaining.innerHTML=="Guesses Remaining :2"){
+				
+				window.remaining.innerHTML="Guesses Remaining :1";
+				
+				window.prev.innerHTML="Previous Guesses :" + val;
+				
+				window.inp.value="";
+				
+				window.lose.style.display="block";
+				
+				document.getElementById(id).style.display="none";
+				document.getElementById(id2).style.display="block";
+				
+				
+				
+			}
+			
+			
+			
+			else if(window.remaining.innerHTML=="Guesses Remaining :1"){
+				
+				window.remaining.innerHTML="Guesses Remaining :0";
+				
+				window.prev.innerHTML="Previous Guesses :" + val;
+				
+				window.inp.value="";
+				
+				window.lose.style.display="block";
+				
+				//document.getElementById(id).style.display="none";
+				//document.getElementById(id2).style.display="block";
+				
+				window.win.style.display="none";
+				
+				
+				
+				document.querySelector(".again").style.display="block";
+				
+			}
+			
+			
+			
+		/*	else if(window.remaining.innerHTML=="Guesses Remaining :0"){
+				
+				window.lose.style.display="block";
+				
+				
+			/*	window.prev.innerHTML="Previous Guesses :" + val;
+				
+				window.inp.value="";
+				*/
+				
+				
+				
+				
+				
+				
+			 
+			
+			
+		}
+	
+	
+	
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
